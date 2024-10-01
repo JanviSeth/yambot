@@ -7,6 +7,11 @@
     <xacro:property name="laser_height" value="0.175"/>
     <xacro:property name="laser_mass" value="0.1"/>
 
+    <!-- Define the material for the LiDAR -->
+    <material name="red">
+        <color rgba="1 0 0 1"/> <!-- Define the red material with full opacity -->
+    </material>
+
     <!-- This macro defines the complete inertial section of the LiDAR -->
     <xacro:macro name="inertial_laser">
         <inertial>
@@ -26,7 +31,7 @@
             <geometry>
                 <cylinder radius="${laser_radius}" length="${laser_length}"/>
             </geometry>
-            <material name="red"/>
+            <material name="red"/> <!-- Use the defined material -->
         </visual>
         <collision>
             <geometry>
@@ -43,7 +48,7 @@
     </joint>
 
     <gazebo reference="laser_frame">
-        <material>Gazebo/Red</material>
+        <material>Gazebo/Red</material> <!-- Ensure the material is correctly referenced -->
         <sensor name="laser" type="ray">
             <pose>0 0 0 0 0 0</pose>
             <visualize>true</visualize>
