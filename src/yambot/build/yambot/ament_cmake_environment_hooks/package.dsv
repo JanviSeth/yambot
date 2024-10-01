@@ -1,0 +1,4 @@
+source;share/yambot/local_setup.bash
+source;share/yambot/local_setup.dsv
+source;share/yambot/local_setup.sh
+source;share/yambot/local_setup.zsh

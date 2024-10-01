@@ -1,0 +1,6 @@
+Invoking command in '/home/janvi/yambot_ws/src/yambot/build/yambot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/janvi/yambot_ws/src/yambot -DCMAKE_INSTALL_PREFIX=/home/janvi/yambot_ws/src/yambot/install/yambot
+Invoked command in '/home/janvi/yambot_ws/src/yambot/build/yambot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/janvi/yambot_ws/src/yambot -DCMAKE_INSTALL_PREFIX=/home/janvi/yambot_ws/src/yambot/install/yambot
+Invoking command in '/home/janvi/yambot_ws/src/yambot/build/yambot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/janvi/yambot_ws/src/yambot/build/yambot -- -j6 -l6
+Invoked command in '/home/janvi/yambot_ws/src/yambot/build/yambot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/janvi/yambot_ws/src/yambot/build/yambot -- -j6 -l6
+Invoking command in '/home/janvi/yambot_ws/src/yambot/build/yambot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/janvi/yambot_ws/src/yambot/build/yambot
+Invoked command in '/home/janvi/yambot_ws/src/yambot/build/yambot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/janvi/yambot_ws/src/yambot/build/yambot

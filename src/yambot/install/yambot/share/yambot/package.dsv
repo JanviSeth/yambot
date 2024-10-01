@@ -1,0 +1,8 @@
+source;share/yambot/hook/cmake_prefix_path.ps1
+source;share/yambot/hook/cmake_prefix_path.dsv
+source;share/yambot/hook/cmake_prefix_path.sh
+source;share/yambot/local_setup.bash
+source;share/yambot/local_setup.dsv
+source;share/yambot/local_setup.ps1
+source;share/yambot/local_setup.sh
+source;share/yambot/local_setup.zsh

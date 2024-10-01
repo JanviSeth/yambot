@@ -1,0 +1,9 @@
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/uninstall.dir
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/yambot_uninstall.dir
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/test.dir
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/edit_cache.dir
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/rebuild_cache.dir
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/list_install_components.dir
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/install.dir
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/install/local.dir
+/home/janvi/yambot_ws/src/yambot/build/yambot/CMakeFiles/install/strip.dir
