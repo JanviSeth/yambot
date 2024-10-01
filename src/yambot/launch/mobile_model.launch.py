@@ -54,6 +54,7 @@ def generate_launch_description():
         output='screen',
         parameters=[{'robot_description': robotDescription, 'use_sim_time': True}]
     )
+       
 
     # Create an empty launch description object
     launchDescriptionObject = LaunchDescription()
