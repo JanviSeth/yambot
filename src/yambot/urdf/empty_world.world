@@ -1,16 +1,174 @@
 <?xml version="1.0" ?>
-
 <sdf version="1.5">
-	<world name="Empty world">
-		<!-- light source -->
-		<include>
-			<uri>model://sun</uri>
-		</include>
-	
-		<!-- this is the ground plane -->
-		<include>
-			<uri>model://ground_plane</uri>
-		</include>
-	</world>
+  <world name="room_with_obstacles">
+    <!-- Light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground plane (place at the origin) -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Room (4 walls) -->
+    <!-- Wall 1 (along x-axis) -->
+    <model name="wall1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 0.1 2</size> <!-- Length, Thickness, Height -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 0.1 2</size> <!-- Length, Thickness, Height -->
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0 10 1 0 0 0</pose> <!-- Positioned at z=1 to ensure it's on the ground -->
+    </model>
+
+    <!-- Wall 2 (along y-axis) -->
+    <model name="wall2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 20 2</size> <!-- Length, Thickness, Height -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 20 2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>10 0 1 0 0 0</pose> <!-- Positioned at z=1 to ensure it's on the ground -->
+    </model>
+
+    <!-- Wall 3 (opposite x-axis) -->
+    <model name="wall3">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 0.1 2</size> <!-- Length, Thickness, Height -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 0.1 2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0 -10 1 0 0 0</pose> <!-- Positioned at z=1 -->
+    </model>
+
+    <!-- Wall 4 (opposite y-axis) -->
+    <model name="wall4">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 20 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 20 2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>-10 0 1 0 0 0</pose>
+    </model>
+
+    <!-- Obstacles -->
+    <!-- Obstacle 1 (box) -->
+    <model name="obstacle1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.5</size> <!-- Length, Width, Height -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>2 8 0.25 0 0 0</pose> <!-- Positioned at z=0.25, half of height -->
+    </model>
+
+    <!-- Obstacle 2 (box) -->
+    <model name="obstacle2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.7 0.7 0.7</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.7 0.7 0.7</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>-4 5 0.35 0 0 0</pose> <!-- Positioned at z=0.35, half of height -->
+    </model>
+
+    <!-- Obstacle 3 (cylinder) -->
+    <model name="obstacle3">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.6</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.6</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0 -4 0.3 0 0 0</pose> <!-- Positioned at z=0.3, half of height -->
+    </model>
+
+  </world>
 </sdf>
 
