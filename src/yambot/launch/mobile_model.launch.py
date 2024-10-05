@@ -54,7 +54,19 @@ def generate_launch_description():
         output='screen',
         parameters=[{'robot_description': robotDescription, 'use_sim_time': True}]
     )
-       
+    
+    # SLAM toolbox node
+    slamToolboxNode = Node(
+    	package='slam_toolbox',
+    	executable='async_slam_toolbox_node',
+    	name='slam_toolbox',
+    	output='screen',
+    	parameters=[{
+            'use_sim_time': True,
+            'slam_params_file': os.path.join(get_package_share_directory(namePackage), 'config', 'mapper_params_online_async.yaml')
+        }],
+        remappings=[('/laser_scan', '/laser_controller/out')]  # Ensure correct topic remapping if needed
+    )
 
     # Create an empty launch description object
     launchDescriptionObject = LaunchDescription()
@@ -63,6 +75,7 @@ def generate_launch_description():
     launchDescriptionObject.add_action(gazeboLaunch)
     launchDescriptionObject.add_action(spawnModelNode)
     launchDescriptionObject.add_action(nodeRobotStatePublisher)
+    launchDescriptionObject.add_action(slamToolboxNode)
 
     return launchDescriptionObject
 
