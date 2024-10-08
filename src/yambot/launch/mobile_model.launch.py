@@ -65,7 +65,7 @@ def generate_launch_description():
             'use_sim_time': True,
             'slam_params_file': os.path.join(get_package_share_directory(namePackage), 'config', 'mapper_params_online_async.yaml')
         }],
-        remappings=[('/laser_scan', '/laser_controller/out')]  # Ensure correct topic remapping if needed
+        remappings=[('/laser_scan', '/scan')]  # Ensure correct topic remapping if needed
     )
 
     # Create an empty launch description object

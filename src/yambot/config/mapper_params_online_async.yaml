@@ -13,16 +13,10 @@ slam_toolbox:
     odom_frame: odom
     map_frame: map
     base_frame: body_link # Change to yambot base_frame which is body_link for me
-    scan_topic: /laser_controller/out # scan
+    scan_topic: /scan # scan
     use_map_saver: true
     mode: mapping #localization
     
-    # Subscribers configuration
-    subscribers:
-    	laser_scan:
-    		topic: /laser_controller/out    # Topic where laser scans are published
-    		frame_id: laser_frame           # Frame ID for the laser scans
-    		
     # if you'd like to immediately start continuing a map at a given pose
     # or at the dock, but they are mutually exclusive, if pose is given
     # will use pose
