@@ -1,5 +1,3 @@
-# Internship
-
 ## Mobile Robot
 ros2 launch yambot mobile_model.launch.py 
 ros2 run rviz2 rviz2
