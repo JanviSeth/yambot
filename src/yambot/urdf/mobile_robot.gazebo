@@ -42,11 +42,11 @@
         <!-- Number of wheel pairs -->
         <num_wheel_pairs>2</num_wheel_pairs>
         
-        <left_joint>wheel4_joint</left_joint>
-        <right_joint>wheel3_joint</right_joint>
-        
         <left_joint>wheel2_joint</left_joint>
         <right_joint>wheel1_joint</right_joint>
+        
+        <left_joint>wheel4_joint</left_joint>
+        <right_joint>wheel3_joint</right_joint>
         
         <!-- Kinematics -->
         <wheel_separation>${body_link_y_dim+wheel_link_length}</wheel_separation>
@@ -62,7 +62,7 @@
         <publish_wheel_tf>true</publish_wheel_tf>
         
         <odometry_frame>odom</odometry_frame>
-        <robot_base_frame>dummy</robot_base_frame>
+        <robot_base_frame>body_link</robot_base_frame>
     </plugin>
 </gazebo>
 

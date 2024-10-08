@@ -63,9 +63,32 @@ def generate_launch_description():
     	output='screen',
     	parameters=[{
             'use_sim_time': True,
-            'slam_params_file': os.path.join(get_package_share_directory(namePackage), 'config', 'mapper_params_online_async.yaml')
+            'slam_params_file': os.path.join(get_package_share_directory(namePackage), 'config', 'mapper_params_online_async.yaml'),
+            'queue_size': 10  # Increase queue size as needed
         }],
         remappings=[('/laser_scan', '/scan')]  # Ensure correct topic remapping if needed
+    )
+   
+    
+    # Joy node for game controller input
+    joyNode = Node(
+        package='joy',
+        executable='joy_node',
+        output='screen',
+        parameters=[os.path.join(get_package_share_directory(namePackage), 'config', 'joy-params.yaml')]
+    )
+
+    # Teleop node to convert joystick messages to velocity commands
+    teleopNode = Node(
+        package='teleop_twist_joy',
+        executable='teleop_node',
+        output='screen',
+        parameters=[{'use_sim_time': True},
+        os.path.join(get_package_share_directory(namePackage), 'config', 'xbox.config.yaml')],
+        remappings=[
+            ('/joy', '/joy'),  # Input from the joystick
+            ('/cmd_vel', '/cmd_vel')  # Output to your robot's velocity topic
+        ]
     )
 
     # Create an empty launch description object
@@ -76,6 +99,8 @@ def generate_launch_description():
     launchDescriptionObject.add_action(spawnModelNode)
     launchDescriptionObject.add_action(nodeRobotStatePublisher)
     launchDescriptionObject.add_action(slamToolboxNode)
+    launchDescriptionObject.add_action(joyNode)
+    launchDescriptionObject.add_action(teleopNode)
 
     return launchDescriptionObject
 
