@@ -40,12 +40,28 @@
 <xacro:include filename="$(find yambot)/urdf/mobile_robot.gazebo" />
 
 <!-- FROM HERE WE DEFINE LINKS, JOINTS -->
-<!-- we need to have this dummy otherwise gazebo will complain -->
-<link name="dummy"></link>
-<joint name="dummy_joint" type="fixed">
-    <parent link="dummy"/>
+<!-- Define the odom link -->
+<link name="odom">
+    <visual>
+        <geometry>
+            <box size="0 0 0"/> <!-- Odom link is not visible, hence empty -->
+        </geometry>
+    </visual>
+    <collision>
+        <geometry>
+            <box size="0 0 0"/> <!-- Odom link has no collision, hence empty -->
+        </geometry>
+    </collision>
+</link>
+
+<!-- Joint to connect odom frame to the robot -->
+<joint name="odom_to_base" type="fixed">
+    <parent link="odom"/>
     <child link="body_link"/>
 </joint>
+
+
+
 
 <link name="body_link">
     <visual>

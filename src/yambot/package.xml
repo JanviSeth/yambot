@@ -12,8 +12,12 @@
   <build_depend>rclcpp</build_depend>
   <build_depend>joy</build_depend>
   <build_depend>teleop_twist_joy</build_depend>
-  <depend>teleop_twist_msgs</depend> <!-- This is often needed for message types -->
+  <build_depend>tf2</build_depend>               <!-- Added for TF -->
+  <build_depend>tf2_ros</build_depend>           <!-- Added for TF -->
+  <build_depend>tf2_geometry_msgs</build_depend> <!-- Added for TF -->
   
+  <depend>teleop_twist_msgs</depend>
+
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
@@ -27,11 +31,13 @@
   <exec_depend>ros_gz_bridge</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>slam_toolbox</exec_depend>
-
+  <exec_depend>tf2</exec_depend>               <!-- Added for TF -->
+  <exec_depend>tf2_ros</exec_depend>           <!-- Added for TF -->
+  <exec_depend>tf2_geometry_msgs</exec_depend> <!-- Added for TF -->
 
   <export>
     <build_type>ament_cmake</build_type>
-    <launchfile>launch/spawn_robot.launch.py</launchfile> <!-- Ensure this path is correct -->
+    <launchfile>launch/spawn_robot.launch.py</launchfile>
   </export>
   
 </package>
